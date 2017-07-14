@@ -1,7 +1,8 @@
 {
-    "name": "PeepPassword",
     "manifest_version": 2,
-    "description": "This extension get forgot password which is chrome have saved",
+
+    "name": "PeepPassword",
+    "description": "This extension show your forgot password which was saved by chrome",
     "version": "1.0",
 
     "background": {
@@ -10,15 +11,11 @@
 
     "browser_action": {
         "default_icon": "icon/eye_close.png"
-        // "default_popup": "popup.html",
-        // "default_title": "What is Password"
     },
 
     "content_scripts": [{
-        // matches 匹配 content_scripts 可以在哪些页面运行
         "matches": ["http://*/*", "https://*/*"],
         "js": ["js/content_scripts.js"]
-        // "css": ["css/notification.css"]
     }],
 
     "icons": {
@@ -26,9 +23,10 @@
         "48": "icon/icon_48.png",
         "128": "icon/icon_128.png"
     },
-
+    
+    "homepage_url": "https://github.com/laobie/PeepPassword",
+    
     "permissions": [
-        "activeTab",
         "tabs",
         "background",
         "storage"
