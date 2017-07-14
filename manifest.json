@@ -1,21 +1,18 @@
 {
+    "name": "PeepPassword",
     "manifest_version": 2,
-
-    "name": "WhatPassword",
     "description": "This extension get forgot password which is chrome have saved",
-    "version": "0.1",
+    "version": "1.0",
 
-    // "browser_action": {
-    // "default_icon": "murl_icon.png",
-    // "default_popup": "popup.html",
-    // "default_title": "What is Password"
-    // },
+    "background": {
+        "page": "background.html"
+    },
 
-    // "background": {
-    //     "scripts": ["js/vendor/jquery-3.2.1.min.js", "js/background.js"],
-    //     // persistent代表“是否持久”。如果是一个单纯的全局后台js，需要一直运行，则不需配置persistent（或者为true）。当配置为false时转变为事件js，依旧存在于后台，在需要时加载，空闲时卸载
-    //     "persistent": true
-    // },
+    "browser_action": {
+        "default_icon": "icon/eye_close.png"
+        // "default_popup": "popup.html",
+        // "default_title": "What is Password"
+    },
 
     "content_scripts": [{
         // matches 匹配 content_scripts 可以在哪些页面运行
@@ -25,11 +22,15 @@
     }],
 
     "icons": {
-        // "16": "asset/murl_16.png",
-        // "48": "asset/murl_48.png",
-        // "128": "asset/murl_128.png"
+        "16": "icon/icon_16.png",
+        "48": "icon/icon_48.png",
+        "128": "icon/icon_128.png"
     },
+
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "tabs",
+        "background",
+        "storage"
     ]
 }
