@@ -3,12 +3,10 @@ const KEY_ENABLE = "enable_peep_password";
 chrome.storage.sync.set({
   "enable_peep_password": false
 }, function () {
-  console.log("save finished")
 });
 
 chrome.browserAction.onClicked.addListener(function (tab) {
   chrome.storage.sync.get(function (result) {
-    console.log(result)
     for (key in result) {
       if (key === KEY_ENABLE) {
         setEnable(!result[KEY_ENABLE])
@@ -23,7 +21,6 @@ function setEnable(isEnable) {
   chrome.storage.sync.set({
     "enable_peep_password": isEnable
   }, function () {
-    console.log("save finished")
   });
 };
 
